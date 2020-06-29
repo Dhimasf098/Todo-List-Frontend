@@ -72,7 +72,7 @@ export default function Home() {
 
    return username ? (
       <div className="container" >
-         <h1 className="text-center" >Home Component</h1>
+         <h1 className="text-center" >Todo's List</h1>
          <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
          <TodoInput addTodo={addTodo} />
       </div>

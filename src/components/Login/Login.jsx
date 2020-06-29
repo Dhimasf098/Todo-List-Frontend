@@ -11,6 +11,7 @@ export default function Login() {
 
    const dispatch = useDispatch()
    const username = useSelector(state => state.auth.username )
+   
 
    const onButtonClick = () => {
          const username = usernameRef.current.value
@@ -18,7 +19,7 @@ export default function Login() {
 
          axios.post('/user/login', {username, password})
          .then(({data : {token, user : {id, username}}}) => {
-            
+         
             // simpan ke redux
             dispatch(loginAction({id, username, token}))
 
@@ -27,7 +28,8 @@ export default function Login() {
    }
 
    return (
-      !username ? (<div className="mt-5 row">
+      !username ? (
+      <div className="mt-5 row">
          <div className="col-sm-3 mx-auto card">
             <div className="card-body">
                   <div className="border-bottom border-secondary card-title">

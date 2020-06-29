@@ -20,11 +20,11 @@ export default function Register() {
       const email = emailRef.current.value
       const password = passwordRef.current.value
 
-      const body = {
-         username, name, email, password
-      }
+      // const body = {
+      //    username, name, email, password
+      // }
 
-      axios.post('/register', body)
+      axios.post('/register', {username, name, email, password})
          .then(res => {
             alert(res.data.message)
          })
